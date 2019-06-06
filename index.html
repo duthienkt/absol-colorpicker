@@ -38,7 +38,8 @@
         absol._({
             tag: 'colorpicker',
             props: {
-                value: 'black'
+                value: 'black',
+                mode:'RGBA'
             }
         }).on('change', function (event, sender) {
             mEditableText.addStyle('background-color', this.value.getContrastYIQ().toString())
