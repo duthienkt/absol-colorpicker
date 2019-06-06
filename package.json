@@ -27,8 +27,8 @@
     },
     "homepage": "https://github.com/duthienkt/absol-colorpicker",
     "dependencies": {
-        "absol": "^1.1.5",
-        "absol-acomp": "^0.1.2"
+        "absol": "^1.1.7",
+        "absol-acomp": "^0.1.8"
     },
     "devDependencies": {
         "@babel/core": "^7.4.5",
