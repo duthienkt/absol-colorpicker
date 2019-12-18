@@ -36,14 +36,19 @@
         }).addTo(document.body);
         mEditableText = absol.$('editabletext', mEditableTextLine);
         absol._({
-            tag: 'colorpicker',
+            tag: 'coloriconinput',
+            on:{
+                change: function(event)
+                {
+                    console.log(event)
+                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                    mEditableText.addStyle('color', event.value.toString());
+                }
+            },
             props: {
-                value: 'black',
+                value: "#1c64a3",
                 mode:'RGBA'
-            }
-        }).on('change', function (event, sender) {
-            mEditableText.addStyle('background-color', this.value.getContrastYIQ().toString())
-            mEditableText.addStyle('color', this.value.toString());
+            },
         }).addTo(document.body);
     </script>
 </body>

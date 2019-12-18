@@ -1,11 +1,11 @@
 import CPCore from "./components/CPCore";
 import ColorPickerStyle from "./style";
-import './components/ColorPicker';
+import './components/ColorIconInput';
 import Color from "absol/src/Color/Color";
 
 
 
-var ColorPicker = {
+var ColorIconInput = {
     core: CPCore,
     _: CPCore._,
     $: CPCore.$,
@@ -19,4 +19,4 @@ var ColorPicker = {
     Color:Color
 };
 
-export default ColorPicker;
+export default ColorIconInput;
