@@ -31,11 +31,15 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                options: { presets: [[ '@babel/preset-env', { modules: false }]] }
+                options: { presets: [['@babel/preset-env', { modules: false }]] }
             },
             {
-                test: /\.(tpl|txt|xml|rels|css)$/i,
+                test: /\.(tpl|txt|xml|rels)$/i,
                 use: 'raw-loader',
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
