@@ -1,7 +1,7 @@
 # ColorPicker
 
 ```js
-    //ColorPicker is absol.Dom object
+    //ColorPicker is a object
     ColorPicker._({
             tag: 'colorpicker',// tagName of default color picker
             props: {
@@ -13,6 +13,25 @@
             mEditableText.addStyle('color', this.value.toString());
         }).addTo(document.body);
 
+```
+
+
+```js
+    absol._({
+            tag: 'colorpickerbutton',
+            on:{
+                change: function(event)
+                {
+                    
+                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                    mEditableText.addStyle('color', event.value.toString());
+                }
+            },
+            props: {
+                value: "#1c64a3",
+                mode:'RGBA'
+            },
+        }).addTo(document.body);
 ```
 
 [![Live-Demo](./doc/assets/v0.0.1.png)](https://volcanion.cf/colorpicker)
