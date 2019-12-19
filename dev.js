@@ -1,22 +1,10 @@
-import ColorIconInput from '.';
+import 'absol/src/absol';
+import 'absol-acomp/dev';
+import '.';
+import ColorPicker from './components/ColorPicker';
+import ColorPickerButton from './components/ColorPickerButton';
 
-window.absol = window.absol || {};
-var absol = window.absol;
-
-if (!absol._){
-    absol._ = ColorIconInput._;
-}
-
-if (!absol.$){
-    absol.$ = ColorIconInput.$;
-}
-
-if (absol.ShareCreator){
-    Object.assign(absol.ShareCreator, ColorIconInput.creator);
-}
-
-
-if (!absol.Color){
-    absol.Color = ColorIconInput.Color;
-}
-
+window.absol.coreDom.install({
+    colorpicker:ColorPicker,
+    colorpickerbutton:ColorPickerButton
+});
