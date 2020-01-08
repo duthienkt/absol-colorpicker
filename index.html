@@ -49,6 +49,36 @@
                 mode:'RGBA'
             },
         }).addTo(document.body);
+
+        absol._({
+            tag: 'colorpickerbutton',
+            on:{
+                change: function(event)
+                {
+                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                    mEditableText.addStyle('color', event.value.toString());
+                }
+            },
+            props: {
+                value: "red",
+                mode:'RGBA'
+            },
+        }).addTo(document.body);
+
+        absol._({
+            tag: 'colorpickerbutton',
+            on:{
+                change: function(event)
+                {
+                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                    mEditableText.addStyle('color', event.value.toString());
+                }
+            },
+            props: {
+                value: "red"
+            },
+        }).addTo(document.body);
+
     </script>
 </body>
 
