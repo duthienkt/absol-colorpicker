@@ -43,13 +43,14 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        // We no not want to minimize our code.
+        minimize: false
+    },
     devServer: {
         compress: true
     },
     performance: {
         hints: false
-    },
-    plugins: [
-        new MinifyPlugin()
-    ]
+    }
 };
