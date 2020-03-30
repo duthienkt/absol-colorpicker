@@ -2,11 +2,15 @@
 
 <head>
     <script src="./dist/absol-colorpicker.js"></script>
+    <link rel="stylesheet" href="https://absol.cf/hightlight/styles/default.css">
+    <script src="https://absol.cf/hightlight/highlight.pack.js"></script>
 </head>
 
 <body>
     <h1>Editable Text</h1>
-    <script>
+    <div id="demo1"></div>
+    <script class="viewable">
+        var demo1 = absol.$('#demo1');
         var mEditableTextLine = absol._({
             child: [
                 {
@@ -33,22 +37,24 @@
                     text: ' read only text'
                 }
             ]
-        }).addTo(document.body);
+        }).addTo(demo1);
         mEditableText = absol.$('editabletext', mEditableTextLine);
         absol._({
             tag: 'colorpickerbutton',
             on:{
                 change: function(event)
                 {
-                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                    //value lấy ra luôn là giá trị kiểu Color, có thể chuyển qua chuỗi thông qua hàm toString, 
+                    //với các option RGB, HSB, HSL,  HEX4, HEX3 hoặc có alpha RGBA, HSBA, HSLA, HEX8, HEX6
+                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString('HEX8'))
                     mEditableText.addStyle('color', event.value.toString());
                 }
             },
             props: {
-                value: "#1c64a3",
-                mode:'RGBA'
+                value: "#1c64a3",//value có thể là kiểu Color, hoặc string
+                mode:'RGBA'//mode có thể là RGB, HSB, HSL, hoặc có alpha RGBA, HSBA, HSLA
             },
-        }).addTo(document.body);
+        }).addTo(demo1);
 
         absol._({
             tag: 'colorpickerbutton',
@@ -63,7 +69,7 @@
                 value: "red",
                 mode:'RGBA'
             },
-        }).addTo(document.body);
+        }).addTo(demo1);
 
         absol._({
             tag: 'colorpickerbutton',
@@ -75,11 +81,13 @@
                 }
             },
             props: {
-                value: "red"
+                value: "red",
+                mode:'HSB', //
             },
-        }).addTo(document.body);
+        }).addTo(demo1);
 
     </script>
+    <script src="https://absol.cf/absol/demo/autohightlighting.js"></script>
 </body>
 
 </html>
