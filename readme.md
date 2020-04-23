@@ -34,4 +34,4 @@
         }).addTo(document.body);
 ```
 
-[![Live-Demo](./doc/assets/v0.0.1.png)](https://volcanion.cf/colorpicker)
+[![Live-Demo](./doc/assets/v0.2.0.png)](https://absol.cf/colorpicker)
