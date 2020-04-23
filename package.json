@@ -1,6 +1,6 @@
 {
     "name": "absol-colorpicker",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "description": "HTML5 components base on absol.js",
     "main": "src/absol.colorpicker.js",
     "directories": {
@@ -27,15 +27,15 @@
     },
     "homepage": "https://github.com/duthienkt/absol-colorpicker",
     "dependencies": {
-        "absol": "^1.11.3",
-        "absol-acomp": "^0.8.6"
+        "absol": "^1.12.5",
+        "absol-acomp": "^0.9.0"
     },
     "devDependencies": {
         "@babel/core": "^7.4.5",
         "@babel/preset-env": "^7.4.5",
         "babel-loader": "^8.0.6",
         "babel-minify-webpack-plugin": "^0.3.1",
-        "css-loader": "^3.1.0",
+        "css-loader": "^3.5.2",
         "raw-loader": "^2.0.0",
         "style-loader": "^0.23.1",
         "uglifyjs-webpack-plugin": "^2.1.2",
