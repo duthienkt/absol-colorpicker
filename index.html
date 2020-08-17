@@ -2,93 +2,99 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src="./dist/absol-colorpicker.js"></script>
+    <script src="../dist/absol-colorpicker.js?time=<?php  echo stat('../dist/absol-colorpicker.js')['mtime'];?>"></script>
     <link rel="stylesheet" href="https://absol.cf/hightlight/styles/default.css">
     <script src="https://absol.cf/hightlight/highlight.pack.js"></script>
+    <title>ColorPicker</title>
 </head>
 
 <body>
-    <h1>Editable Text</h1>
-    <div id="demo1"></div>
-    <script class="viewable">
-        var demo1 = absol.$('#demo1');
-        var mEditableTextLine = absol._({
-            child: [
-                {
-                    tag: 'label',
-                    props: {
-                        innerHTML: 'editabletext: '
-                    }
+<h1>Editable Text</h1>
+<div id="demo1"></div>
+<script class="viewable">
+    var demo1 = absol.$('#demo1');
+    var mEditableTextLine = absol._({
+        child: [
+            {
+                tag: 'label',
+                props: {
+                    innerHTML: 'editabletext: '
+                }
+            },
+            {
+                tag: 'preinput',
+                style: {
+                    fontSize: '30px',
+                    display: 'inline-block'
                 },
-                {
-                    tag: 'preinput',
-                    style: {
-                        fontSize: '30px',
-                        display:'inline-block'
-                    },
-                    props: {
-                        value: 'Try to edit this text'
-                    },
-                    on: {
-                        click: function () {
-                        }
-                    }
+                props: {
+                    value: 'Try to edit this text'
                 },
-                {
-                    text: ' read only text'
-                }
-            ]
-        }).addTo(demo1);
-        mEditableText = absol.$('preinput', mEditableTextLine);
-        absol._({
-            tag: 'colorpickerbutton',
-            on:{
-                change: function(event)
-                {
-                    //value lấy ra luôn là giá trị kiểu Color, có thể chuyển qua chuỗi thông qua hàm toString, 
-                    //với các option RGB, HSB, HSL,  HEX4, HEX3 hoặc có alpha RGBA, HSBA, HSLA, HEX8, HEX6
-                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString('HEX8'))
-                    mEditableText.addStyle('color', event.value.toString());
+                on: {
+                    click: function () {
+                    }
                 }
             },
-            props: {
-                value: "#1c64a3",//value có thể là kiểu Color, hoặc string
-                mode:'RGBA'//mode có thể là RGB, HSB, HSL, hoặc có alpha RGBA, HSBA, HSLA
-            },
-        }).addTo(demo1);
+            {
+                text: ' read only text'
+            }
+        ]
+    }).addTo(demo1);
+    mEditableText = absol.$('preinput', mEditableTextLine);
+    absol._({
+        tag: 'colorpickerbutton',
+        on: {
+            change: function (event) {
+                //value lấy ra luôn là giá trị kiểu Color, có thể chuyển qua chuỗi thông qua hàm toString,
+                //với các option RGB, HSB, HSL,  HEX4, HEX3 hoặc có alpha RGBA, HSBA, HSLA, HEX8, HEX6
+                mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString('HEX8'))
+                mEditableText.addStyle('color', event.value.toString());
+            }
+        },
+        props: {
+            value: "#1c64a3",//value có thể là kiểu Color, hoặc string
+        },
+    }).addTo(demo1);
 
-        absol._({
-            tag: 'colorpickerbutton',
-            on:{
-                change: function(event)
-                {
-                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
-                    mEditableText.addStyle('color', event.value.toString());
-                }
-            },
-            props: {
-                value: "red",
-                mode:'RGBA'
-            },
-        }).addTo(demo1);
+    absol._({
+        tag: 'colorpickerbutton',
+        on: {
+            change: function (event) {
+                mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                mEditableText.addStyle('color', event.value.toString());
+            }
+        },
+        props: {
+            value: "red",
+        },
+    }).addTo(demo1);
 
-        absol._({
-            tag: 'colorpickerbutton',
-            on:{
-                change: function(event)
-                {
-                    mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
-                    mEditableText.addStyle('color', event.value.toString());
-                }
-            },
-            props: {
-                value: "red",
-                mode:'HSB', //
-            },
-        }).addTo(demo1);
+    absol._({
+        tag: 'colorpickerbutton',
+        on: {
+            change: function (event) {
+                mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                mEditableText.addStyle('color', event.value.toString());
+            }
+        },
+        props: {
+            value: "red",
+            mode: 'HSB', //
+        },
+    }).addTo(demo1);
 
-    </script>
-    <script src="https://absol.cf/absol/demo/autohightlighting.js"></script>
+    absol._({
+        tag: 'solidcolorpicker',// tagName of default color picker
+        props: {
+            value: 'black',// support rgb, rgba, hsl,hsla, hsb, hsba, hex8, hex6, hex4, hex3
+        }
+    }).on('change', function (event, sender) {
+        mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+        mEditableText.addStyle('color', event.value.toString());
+    }).addTo(document.body);
+
+</script>
+<script src="https://absol.cf/absol/demo/autohightlighting.js"></script>
 </body>
 
 </html>

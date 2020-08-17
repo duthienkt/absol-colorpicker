@@ -1,23 +1,22 @@
 # ColorPicker
 
 ```js
-    //ColorPicker is a object
-    ColorPicker._({
-            tag: 'colorpicker',// tagName of default color picker
-            props: {
-                value: 'black',// support rgb, rgba, hsl,hsla, hsb, hsba, hex8, hex6, hex4, hex3
-                mode:'RGBA'// HSB|HSL|RGB|RGBA|HSBA|HSLA
-            }
-        }).on('change', function (event, sender) {
-            mEditableText.addStyle('background-color', this.value.getContrastYIQ().toString())
-            mEditableText.addStyle('color', this.value.toString());
-        }).addTo(document.body);
+   var picker =  absol._({
+        tag: 'solidcolorpicker',// tagName of default color picker
+        props: {
+            value: 'black',// support rgb, rgba, hsl,hsla, hsb, hsba, hex8, hex6, hex4, hex3
+        }
+    }).on('change', function (event, sender) {
+        mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+        mEditableText.addStyle('color', event.value.toString());
+    });
+    document.body.appendChild(picker);
 
 ```
 
 
 ```js
-    absol._({
+    var cButton = absol._({
             tag: 'colorpickerbutton',
             on:{
                 change: function(event)
@@ -29,9 +28,9 @@
             },
             props: {
                 value: "#1c64a3",
-                mode:'RGBA'
-            },
+            }
         }).addTo(document.body);
+    document.body.appendChild(cButton);
 ```
 
 [![Live-Demo](./doc/assets/v0.2.0.png)](https://absol.cf/colorpicker)
