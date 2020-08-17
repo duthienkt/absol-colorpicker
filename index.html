@@ -21,16 +21,16 @@
                     }
                 },
                 {
-                    tag: 'editabletext',
+                    tag: 'preinput',
                     style: {
-                        fontSize: '30px'
+                        fontSize: '30px',
+                        display:'inline-block'
                     },
                     props: {
-                        text: 'Try to edit this text'
+                        value: 'Try to edit this text'
                     },
                     on: {
                         click: function () {
-                            this.edit(true);
                         }
                     }
                 },
@@ -39,7 +39,7 @@
                 }
             ]
         }).addTo(demo1);
-        mEditableText = absol.$('editabletext', mEditableTextLine);
+        mEditableText = absol.$('preinput', mEditableTextLine);
         absol._({
             tag: 'colorpickerbutton',
             on:{
