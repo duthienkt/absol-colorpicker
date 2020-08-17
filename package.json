@@ -1,6 +1,6 @@
 {
     "name": "absol-colorpicker",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "HTML5 components base on absol.js",
     "main": "src/absol.colorpicker.js",
     "directories": {
