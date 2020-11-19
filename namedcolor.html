@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NamedColor</title>
+    <script src="../dist/absol-colorpicker.js?time=<?php  echo stat('../dist/absol-colorpicker.js')['mtime'];?>"></script>
+</head>
+<body>
+<style>
+    .rect {
+        padding: 10px;
+        display: inline-block;
+        margin: 10px;
+    }
+</style>
+<div id="demo-1">
+    <div class="rect" id="hex"></div>
+    <div class="rect" id="named"></div>
+</div>
+<script>
+    var Color = absol.Color;
+    var cp = absol._({
+        tag: 'colorpickerbutton',
+        on: {
+            change: function (event) {
+                update();
+            }
+        },
+        props: {
+            value: "#1c64a3",//value có thể là kiểu Color, hoặc string
+        },
+    });
+    var demo1 = absol.$('#demo-1');
+    var hex = absol.$('#hex');
+    var named = absol.$('#named');
+    function update(){
+        var v = Color.parse(cp.value);
+        hex.innerHTML = cp.value;
+        hex.addStyle({
+            backgroundColor: v.toString('hex6'),
+            color: v.getContrastYIQ()
+        });
+        var nameOfV = v.nearestNamedColor(true);
+        var cN = Color.parse(nameOfV);
+        named.innerHTML = nameOfV;
+        named.addStyle({
+            backgroundColor: cN.toString('hex6'),
+            color: cN.getContrastYIQ()
+        });
+    }
+    update();
+
+    demo1.addChildBefore(cp, demo1.firstChild);
+
+</script>
+</body>
+</html>
