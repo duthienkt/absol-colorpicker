@@ -27,13 +27,13 @@
     },
     "homepage": "https://github.com/duthienkt/absol-colorpicker",
     "dependencies": {
-        "absol": "^1.15.17",
-        "absol-acomp": "^0.9.53"
+        "absol": "^1.15.20",
+        "absol-acomp": "^0.9.55"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.3",
-        "@babel/preset-env": "^7.12.1",
-        "babel-loader": "^8.2.1",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.10",
+        "babel-loader": "^8.2.2",
         "babel-minify-webpack-plugin": "^0.3.1",
         "css-loader": "^3.5.2",
         "raw-loader": "^2.0.0",
