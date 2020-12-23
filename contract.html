@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../dist/absol-colorpicker.js?time=<?php  echo stat('../dist/absol-colorpicker.js')['mtime'];?>"></script>
+    <link rel="stylesheet" href="https://absol.cf/hightlight/styles/default.css">
+    <script src="https://absol.cf/hightlight/highlight.pack.js"></script>
+    <title>Contract</title>
+</head>
+
+<body>
+<h1>Contract</h1>
+<style>
+    .wrapper {
+        padding: 5px;
+        border: 1px solid #dddddd;
+        display: inline-block;
+    }
+
+    .background{
+        padding: 20px;
+        width: 150px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: red;
+    }
+    .text{
+        color: #1c64a3;
+    }
+</style>
+<div class="wrapper">
+    <div class="background">
+        <h3 class="text">#1c64a3</h3>
+    </div>
+    <span class="background-color">red</span>
+</div>
+<div id="demo1"></div>
+<script>
+   var backgroundDiv = absol.$('.background');
+   var demo1 = absol.$('#demo1')
+   var textSpan = absol.$('.text');
+   var backgroundColorSpan =  absol.$('.background-color');
+
+
+    absol._({
+        tag: 'colorpickerbutton',
+        on: {
+            change: function (event) {
+                backgroundDiv.addStyle('background-color', event.value.toString('hex6'))
+                backgroundColorSpan.innerHTML = event.value.toString('hex6');
+            }
+        },
+        props: {
+            value: "red",
+        },
+    }).addTo(demo1);
+
+   absol._({
+       tag: 'colorpickerbutton',
+       on: {
+           change: function (event) {
+               textSpan.addStyle('color', event.value.toString());
+               textSpan.innerHTML = event.value.toString('hex6');
+           }
+       },
+       props: {
+           value: "#1c64a3",//value có thể là kiểu Color, hoặc string
+       },
+   }).addTo(demo1);
+
+</script>
+<script src="https://absol.cf/absol/demo/autohightlighting.js"></script>
+</body>
+
+</html>
