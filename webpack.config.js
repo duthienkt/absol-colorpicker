@@ -48,6 +48,8 @@ module.exports = {
         minimize: false
     },
     devServer: {
+        host:'0.0.0.0',
+        disableHostCheck: true,
         compress: true
     },
     performance: {
