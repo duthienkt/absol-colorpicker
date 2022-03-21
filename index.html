@@ -61,12 +61,14 @@
         tag: 'colorpickerbutton',
         on: {
             change: function (event) {
-                mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
+                console.log(this.value);
+                mEditableText.addStyle('background-color', absol.Color.parse(event.value).getContrastYIQ().toString())
                 mEditableText.addStyle('color', event.value.toString());
             }
         },
         props: {
             value: "red",
+            mode:'HEX6'
         },
     }).addTo(demo1);
 
