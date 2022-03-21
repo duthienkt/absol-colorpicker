@@ -1,6 +1,6 @@
 {
     "name": "absol-colorpicker",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "description": "HTML5 components base on absol.js",
     "main": "index.js",
     "directories": {
@@ -27,7 +27,7 @@
     },
     "homepage": "https://github.com/duthienkt/absol-colorpicker",
     "dependencies": {
-        "absol": "^1.17.2",
+        "absol": "^1.18.1",
         "absol-acomp": "^0.9.58"
     },
     "devDependencies": {
