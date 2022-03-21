@@ -21,13 +21,14 @@
             on:{
                 change: function(event)
                 {
-                    
+                    console.log(this.value);
                     mEditableText.addStyle('background-color', event.value.getContrastYIQ().toString())
                     mEditableText.addStyle('color', event.value.toString());
                 }
             },
             props: {
                 value: "#1c64a3",
+                mode:'OBJECT'//'OBJECT', 'RGBA', 'RGB', 'HEX8', 'HEX6', 'HEX4', 'HEX3'
             }
         }).addTo(document.body);
     document.body.appendChild(cButton);
