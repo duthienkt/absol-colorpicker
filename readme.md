@@ -34,4 +34,4 @@
     document.body.appendChild(cButton);
 ```
 
-[![Live-Demo](./doc/assets/v0.2.0.png)](https://absol.cf/colorpicker)
+[![Live-Demo](./doc/assets/v0.2.7.png)](https://absol.cf/colorpicker)
