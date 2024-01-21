@@ -1,6 +1,3 @@
-import Dom from 'absol/src/HTML5/Dom';
-import install from "absol-acomp/js/dom/install";
+import ACore from "absol-acomp/ACore";
 
-var CPCore = new Dom();
-install(CPCore)
-export default CPCore;
+export default  ACore;

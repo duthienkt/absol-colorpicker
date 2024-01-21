@@ -1,14 +1,8 @@
 import 'absol/src/absol';
 import 'absol-acomp/dev';
 import '.';
-import ColorPicker from './components/ColorPicker';
-import ColorPickerButton from './components/ColorPickerButton';
-import SwatchesTable from './components/SwatchesTable';
-import SpectrumColor from './components/SpectrumColor';
-import SolidColorPicker from './components/SolidColorPicker';
-
-window.absol.coreDom.install({
-    colorpicker:ColorPicker,
-    colorpickerbutton:ColorPickerButton,
-    solidcolorpicker: SolidColorPicker
-});
+import Dom from "absol/src/HTML5/Dom";
+import SolidColorPicker from "absol-acomp/js/colorpicker/SolidColorPicker";
+import ColorPickerButton from "absol-acomp/js/colorpicker/ColorPickerButton";
+Dom.ShareInstance.install(SolidColorPicker);
+Dom.ShareInstance.install(ColorPickerButton);
